@@ -34,6 +34,7 @@ public class EventActivity extends Activity implements EventContract.View {
         setContentView(R.layout.activity_event);
 
         ((EventApplication) getApplication()).getComponent().inject(this);
+        String article = getIntent().getStringExtra("article");
 
         team1 = findViewById(R.id.tvTeam1);
         team2 = findViewById(R.id.tvTeam2);
@@ -43,7 +44,7 @@ public class EventActivity extends Activity implements EventContract.View {
         prediction = findViewById(R.id.tvPrediction);
 
         presenter.onAttach(this);
-        presenter.getArticle();
+        presenter.getArticle(article);
 
 
 

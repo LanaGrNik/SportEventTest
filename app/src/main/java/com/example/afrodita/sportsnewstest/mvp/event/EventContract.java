@@ -13,7 +13,7 @@ public class EventContract {
 
         void onAttach(View view);
 
-        void getArticle();
+        void getArticle(String article);
     }
 
 }

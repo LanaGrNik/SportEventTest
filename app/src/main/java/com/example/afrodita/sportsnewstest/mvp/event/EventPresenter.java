@@ -2,10 +2,6 @@ package com.example.afrodita.sportsnewstest.mvp.event;
 
 import com.example.afrodita.sportsnewstest.ArticleModel;
 import com.example.afrodita.sportsnewstest.EventApi;
-import com.example.afrodita.sportsnewstest.EventArrayModel;
-import com.example.afrodita.sportsnewstest.EventCategoryModel;
-
-import java.util.ArrayList;
 
 import javax.inject.Inject;
 
@@ -29,9 +25,9 @@ public class EventPresenter implements EventContract.Presenter {
     }
 
     @Override
-    public void getArticle() {
+    public void getArticle(String article) {
 
-        Call<ArticleModel> getArticle = eventApi.getArticle("/2018/02/15/lester-sheffild-junajted-prognoz-na-kubok-anglii-16-02-2018");
+        Call<ArticleModel> getArticle = eventApi.getArticle(article);
 
 
         getArticle.enqueue(new Callback<ArticleModel>() {

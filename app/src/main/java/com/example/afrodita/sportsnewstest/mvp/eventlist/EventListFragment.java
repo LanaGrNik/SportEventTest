@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.example.afrodita.sportsnewstest.mvp.event.EventActivity;
 import com.example.afrodita.sportsnewstest.EventAdapter;
@@ -29,6 +30,7 @@ public class EventListFragment extends Fragment implements EventListContract.Vie
     EventListPresenter presenter;
     ListView listView;
     ProgressBar progressBar;
+    EventAdapter adapter;
 
     @Nullable
     @Override
@@ -63,7 +65,7 @@ public class EventListFragment extends Fragment implements EventListContract.Vie
     @Override
     public void onLoadedEventList(ArrayList<EventCategoryModel> eventList) {
 
-        EventAdapter adapter = new EventAdapter(getContext(),eventList);
+        adapter = new EventAdapter(getContext(),eventList);
         listView.setAdapter(adapter);
         progressBar.setVisibility(View.GONE);
     }
@@ -72,14 +74,16 @@ public class EventListFragment extends Fragment implements EventListContract.Vie
     public void onError() {
         progressBar.setVisibility(View.GONE);
         String message = "Не удалось загрузить данные";
-
+        Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
     }
 
    public  void initClickListener(){
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                EventCategoryModel categoryModel = adapter.getItem(position);
                 Intent intent = new Intent(getActivity(), EventActivity.class);
+                intent.putExtra("article", categoryModel.getArticle());
                 startActivity(intent);
 
             }
