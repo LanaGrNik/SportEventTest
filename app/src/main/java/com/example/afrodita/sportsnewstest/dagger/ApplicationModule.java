@@ -2,7 +2,7 @@ package com.example.afrodita.sportsnewstest.dagger;
 
 import android.content.Context;
 
-import com.example.afrodita.sportsnewstest.EventApi;
+import com.example.afrodita.sportsnewstest.api.EventApi;
 
 import dagger.Module;
 import dagger.Provides;
@@ -14,24 +14,22 @@ public class ApplicationModule {
 
     Context context;
 
-    public ApplicationModule(Context context){
+    public ApplicationModule(Context context) {
         this.context = context;
     }
 
     @Provides
-    public Context provideContext(){
+    public Context provideContext() {
         return context;
     }
-    @Provides
-    public EventApi provideEventApi(){
 
+    @Provides
+    public EventApi provideEventApi() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://mikonatoruri.win/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
         return retrofit.create(EventApi.class);
-
     }
-
 }

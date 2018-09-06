@@ -1,4 +1,4 @@
-package com.example.afrodita.sportsnewstest;
+package com.example.afrodita.sportsnewstest.mvp.event;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,20 +7,19 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.example.afrodita.sportsnewstest.R;
+import com.example.afrodita.sportsnewstest.mvp.event.model.SimpleArticleModel;
+
 import java.util.ArrayList;
 
 public class SimpleListAdapter extends BaseAdapter {
 
-
-    Context context;
     LayoutInflater lInflater;
     ArrayList<SimpleArticleModel> simpleList = new ArrayList<>();
 
     public SimpleListAdapter(Context context, ArrayList<SimpleArticleModel>simpleList) {
-        this.context = context;
         this.simpleList.addAll(simpleList);
         lInflater = LayoutInflater.from(context);
-
     }
 
     @Override
@@ -43,9 +42,9 @@ public class SimpleListAdapter extends BaseAdapter {
         SimpleArticleModel simpleArticleModel = getItem(i);
         view = lInflater.inflate(R.layout.list_simple,parent,false);
         TextView title = view.findViewById(R.id.tvHeader);
-        title.setText(simpleArticleModel.header);
+        title.setText(simpleArticleModel.getHeader());
         TextView coefficient = view.findViewById(R.id.tvText);
-        coefficient.setText(simpleArticleModel.text);
+        coefficient.setText(simpleArticleModel.getText());
 
         return view;
     }

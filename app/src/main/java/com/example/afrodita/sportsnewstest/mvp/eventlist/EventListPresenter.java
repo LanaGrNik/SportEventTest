@@ -18,9 +18,8 @@ public class EventListPresenter implements EventListContract.Presenter {
     EventApi eventApi;
 
     @Inject
-    public EventListPresenter(EventApi eventApi){
+    public EventListPresenter(EventApi eventApi) {
         this.eventApi = eventApi;
-
     }
 
     @Override
@@ -30,16 +29,12 @@ public class EventListPresenter implements EventListContract.Presenter {
 
     @Override
     public void loadEventList(SportType type) {
-
-
         final Call<EventArrayModel> listCategory = eventApi.listCategory(type.getType());
-
 
         listCategory.enqueue(new Callback<EventArrayModel>() {
             @Override
             public void onResponse(Call<EventArrayModel> call, Response<EventArrayModel> response) {
-
-                ArrayList<EventCategoryModel> listCategory = (ArrayList)response.body().getEvents();
+                ArrayList<EventCategoryModel> listCategory = (ArrayList) response.body().getEvents();
                 view.onLoadedEventList(listCategory);
             }
 
@@ -49,6 +44,5 @@ public class EventListPresenter implements EventListContract.Presenter {
                 t.printStackTrace();
             }
         });
-
     }
 }

@@ -6,7 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.example.afrodita.sportsnewstest.mvp.SportType;
+import com.example.afrodita.sportsnewstest.mvp.eventlist.SportType;
 import com.example.afrodita.sportsnewstest.mvp.eventlist.EventListFragment;
 
 public class SportPagerAdapter extends FragmentPagerAdapter {

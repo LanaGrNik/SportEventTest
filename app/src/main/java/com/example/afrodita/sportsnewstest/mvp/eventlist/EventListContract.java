@@ -6,15 +6,13 @@ import java.util.ArrayList;
 
 public interface EventListContract {
 
-    interface View{
-
+    interface View {
         void onLoadedEventList(ArrayList<EventCategoryModel> eventList);
 
-       void onError();
+        void onError();
     }
 
-    interface Presenter{
-
+    interface Presenter {
         void onAttach(View view);
 
         void loadEventList(SportType type);

@@ -1,4 +1,4 @@
-package com.example.afrodita.sportsnewstest.mvp;
+package com.example.afrodita.sportsnewstest.mvp.eventlist;
 
 public enum SportType {
 

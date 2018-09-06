@@ -6,12 +6,9 @@ import android.support.annotation.Nullable;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.afrodita.sportsnewstest.mvp.event.model.ArticleModel;
 import com.example.afrodita.sportsnewstest.EventApplication;
 import com.example.afrodita.sportsnewstest.R;
-import com.example.afrodita.sportsnewstest.mvp.event.model.SimpleArticleModel;
-
-import java.util.ArrayList;
+import com.example.afrodita.sportsnewstest.mvp.event.model.ArticleModel;
 
 import javax.inject.Inject;
 
@@ -24,8 +21,6 @@ public class EventActivity extends Activity implements EventContract.View {
     TextView tournament;
     ListView listView;
     TextView prediction;
-    ArrayList<SimpleArticleModel> list;
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -44,10 +39,7 @@ public class EventActivity extends Activity implements EventContract.View {
 
         presenter.onAttach(this);
         presenter.getArticle(article);
-
-
-
-        }
+    }
 
     @Override
     public void onLoadedArticle(ArticleModel articleModel) {
@@ -55,11 +47,8 @@ public class EventActivity extends Activity implements EventContract.View {
         team2.setText(articleModel.getTeam2());
         time.setText(articleModel.getTime());
         time.setText(articleModel.getTournament());
-        SimpleListAdapter adapter = new SimpleListAdapter(this,articleModel.getArticle());
+        SimpleListAdapter adapter = new SimpleListAdapter(this, articleModel.getArticle());
         listView.setAdapter(adapter);
         prediction.setText(articleModel.getPrediction());
-
-
-
     }
 }

@@ -34,7 +34,6 @@ public class EventListFragment extends Fragment implements EventListContract.Vie
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_event_list, null);
-
     }
 
     @Override
@@ -55,14 +54,11 @@ public class EventListFragment extends Fragment implements EventListContract.Vie
         }
 
         initClickListener();
-
-
 }
 
 
     @Override
     public void onLoadedEventList(ArrayList<EventCategoryModel> eventList) {
-
         adapter = new EventAdapter(getContext(),eventList);
         listView.setAdapter(adapter);
         progressBar.setVisibility(View.GONE);
@@ -83,7 +79,6 @@ public class EventListFragment extends Fragment implements EventListContract.Vie
                 Intent intent = new Intent(getActivity(), EventActivity.class);
                 intent.putExtra("article", categoryModel.getArticle());
                 startActivity(intent);
-
             }
         });
     }

@@ -13,5 +13,4 @@ public interface ApplicationComponent {
 
     void inject(EventListFragment eventListFragment);
     void inject(EventActivity eventActivity);
-
 }
