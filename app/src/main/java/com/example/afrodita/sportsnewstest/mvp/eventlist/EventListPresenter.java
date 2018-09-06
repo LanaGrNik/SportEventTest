@@ -19,10 +19,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class EventListPresenter implements EventListContract.Presenter {
 
     EventListContract.View view;
-
+    EventApi eventApi;
 
     @Inject
-    public EventListPresenter(){};
+    public EventListPresenter(EventApi eventApi){
+        this.eventApi = eventApi;
+
+    }
 
     @Override
     public void onAttach(EventListContract.View view) {
@@ -32,13 +35,9 @@ public class EventListPresenter implements EventListContract.Presenter {
     @Override
     public void loadEventList(SportType type) {
 
-                Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://mikonatoruri.win/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
 
-        EventApi eventApi = retrofit.create(EventApi.class);
         final Call<EventArrayModel> listCategory = eventApi.listCategory(type.getType());
+
 
         listCategory.enqueue(new Callback<EventArrayModel>() {
             @Override
@@ -50,6 +49,7 @@ public class EventListPresenter implements EventListContract.Presenter {
 
             @Override
             public void onFailure(Call<EventArrayModel> call, Throwable t) {
+                view.onError();
                 t.printStackTrace();
             }
         });

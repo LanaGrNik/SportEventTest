@@ -19,6 +19,7 @@ public interface EventApi {
         @GET("list.php")
         Call<EventArrayModel> listCategory(@Query("category") String category);
 
-
+        @GET("post.php")
+        Call<ArticleModel> getArticle(@Query("article")String article);
 
 }

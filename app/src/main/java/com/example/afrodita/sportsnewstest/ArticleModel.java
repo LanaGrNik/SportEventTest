@@ -1,5 +1,7 @@
 package com.example.afrodita.sportsnewstest;
 
+import java.util.ArrayList;
+
 public class ArticleModel {
 
     String team1;
@@ -7,7 +9,7 @@ public class ArticleModel {
     String time;
     String tournament;
     String place;
-    String[] article;
+    ArrayList<SimpleArticleModel> article;
     String prediction;
 
     public String getTeam1() {
@@ -50,11 +52,11 @@ public class ArticleModel {
         this.place = place;
     }
 
-    public String[] getArticle() {
+    public ArrayList<SimpleArticleModel>  getArticle() {
         return article;
     }
 
-    public void setArticle(String[] article) {
+    public void setArticle(ArrayList<SimpleArticleModel>  article) {
         this.article = article;
     }
 

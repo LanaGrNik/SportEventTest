@@ -12,6 +12,8 @@ public interface EventListContract {
     interface View{
 
         void onLoadedEventList(ArrayList<EventCategoryModel> eventList);
+
+       void onError();
     }
 
     interface Presenter{
