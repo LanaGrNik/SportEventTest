@@ -1,8 +1,8 @@
 package com.example.afrodita.sportsnewstest.mvp.event;
 
-import com.example.afrodita.sportsnewstest.ArticleModel;
+import com.example.afrodita.sportsnewstest.mvp.event.model.ArticleModel;
 
-public class EventContract {
+public interface EventContract {
 
     interface View{
 

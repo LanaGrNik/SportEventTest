@@ -1,4 +1,4 @@
-package com.example.afrodita.sportsnewstest;
+package com.example.afrodita.sportsnewstest.mvp.event.model;
 
 import java.util.ArrayList;
 

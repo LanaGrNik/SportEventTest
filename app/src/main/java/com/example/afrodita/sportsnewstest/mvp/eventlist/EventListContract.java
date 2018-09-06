@@ -1,11 +1,8 @@
 package com.example.afrodita.sportsnewstest.mvp.eventlist;
 
-import com.example.afrodita.sportsnewstest.EventCategoryModel;
-import com.example.afrodita.sportsnewstest.mvp.SportType;
+import com.example.afrodita.sportsnewstest.mvp.eventlist.model.EventCategoryModel;
 
 import java.util.ArrayList;
-
-import retrofit2.Retrofit;
 
 public interface EventListContract {
 

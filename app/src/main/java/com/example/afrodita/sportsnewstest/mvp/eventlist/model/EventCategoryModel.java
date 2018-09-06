@@ -1,4 +1,4 @@
-package com.example.afrodita.sportsnewstest;
+package com.example.afrodita.sportsnewstest.mvp.eventlist.model;
 
 public class EventCategoryModel {
 

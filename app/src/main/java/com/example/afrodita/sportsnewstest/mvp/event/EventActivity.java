@@ -6,11 +6,10 @@ import android.support.annotation.Nullable;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.afrodita.sportsnewstest.ArticleModel;
+import com.example.afrodita.sportsnewstest.mvp.event.model.ArticleModel;
 import com.example.afrodita.sportsnewstest.EventApplication;
 import com.example.afrodita.sportsnewstest.R;
-import com.example.afrodita.sportsnewstest.SimpleArticleModel;
-import com.example.afrodita.sportsnewstest.SimpleListAdapter;
+import com.example.afrodita.sportsnewstest.mvp.event.model.SimpleArticleModel;
 
 import java.util.ArrayList;
 

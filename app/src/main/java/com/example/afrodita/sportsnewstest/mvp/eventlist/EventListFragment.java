@@ -14,11 +14,9 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.afrodita.sportsnewstest.mvp.event.EventActivity;
-import com.example.afrodita.sportsnewstest.EventAdapter;
 import com.example.afrodita.sportsnewstest.EventApplication;
-import com.example.afrodita.sportsnewstest.EventCategoryModel;
+import com.example.afrodita.sportsnewstest.mvp.eventlist.model.EventCategoryModel;
 import com.example.afrodita.sportsnewstest.R;
-import com.example.afrodita.sportsnewstest.mvp.SportType;
 
 import java.util.ArrayList;
 

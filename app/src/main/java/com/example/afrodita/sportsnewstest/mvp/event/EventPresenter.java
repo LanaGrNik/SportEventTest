@@ -1,7 +1,7 @@
 package com.example.afrodita.sportsnewstest.mvp.event;
 
-import com.example.afrodita.sportsnewstest.ArticleModel;
-import com.example.afrodita.sportsnewstest.EventApi;
+import com.example.afrodita.sportsnewstest.mvp.event.model.ArticleModel;
+import com.example.afrodita.sportsnewstest.api.EventApi;
 
 import javax.inject.Inject;
 
