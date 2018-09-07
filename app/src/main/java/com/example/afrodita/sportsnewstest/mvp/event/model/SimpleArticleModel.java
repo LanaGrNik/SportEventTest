@@ -4,7 +4,6 @@ public class SimpleArticleModel {
 
     String header;
     String text;
-
     public String getHeader() {
         return header;
     }
